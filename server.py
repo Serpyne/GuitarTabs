@@ -52,7 +52,11 @@ def add_tab(name, url):
 def find_tab_url(url):
 
     if re.search(r"drive.google.com/", url):
-        return (url)
+        response = requests.get(url)
+        html = response.text
+
+        title = re.search(r'<title>(.+?)</title>', html).group(1)
+        return title, url
 
     elif re.search(r"kemono.su/", url):
         response = requests.get(url)
