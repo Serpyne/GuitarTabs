@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS
 import json
 import requests
 import re
@@ -7,9 +8,11 @@ from threading import Thread
 import logging
 
 app = Flask(__name__)
+CORS(app)
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
+
 
 def site_url():
     repl_id = os.getenv("REPL_ID")
@@ -102,12 +105,13 @@ def about():
 
 
 def run():
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', debug=False)
 
 
 def start():
-    thread = Thread(target=run)
-    thread.start()
+    # thread = Thread(target=run)
+    # thread.start()
+    run()
 
 
 if __name__ == "__main__":
