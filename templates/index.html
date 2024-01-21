@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabs</title>
+        <meta name="description" content="Guitar Tabs">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1 class="title">Tabs</h1>
+        </div>
+        
+        <div id="navigation-div" class="navigation">
+            <button id="home-button" class="navigation-button" onclick="window.location.href='/';">Home</button>
+            <button id="tabs-button" class="navigation-button" onclick="window.location.href='/tabs';">Tabs</button>
+            <button id="about-button" class="navigation-button" onclick="window.location.href='/about';">About</button>
+        </div>
+
+        <div class="description">
+            <p>The hub for guitar tabs alongside audio recordings.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Created by</p>&nbsp;
+            <a class="creator-link" href="https://github.com/Serpyne"> Serpyne</a>
+        </div>
+    </body>
+</html>
+
+
+
+<!-- {% for i in range(0, 3) %} -->
+    <!-- <button class="navigation-button">{{i}}</button> -->
+<!-- {% endfor %} -->

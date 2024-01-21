@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #0c0b0f;
+}
+
+body, div, button, p {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+div.header {
+    background-color: #26242e;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+div.navigation {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#tabs-div {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    position: relative;
+    width: 80%;
+    min-height: 100px;
+    height: 80%;
+    background: #222;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.tabs-div {
+    overflow: hidden;
+}
+.tabs-div::before {
+    position: absolute;
+    content: "";
+    width: 5%;
+    height: 1000%;
+    background: #fff;
+    transform: rotate(45deg);
+
+    animation: animate 10s linear infinite;
+}
+@keyframes animate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.tabs-div::after {
+    position: absolute;
+    content: "";
+    inset: 5px;
+    background: #222;
+    border-radius: 8px;
+}
+
+.tab-item {
+    color: #fff;
+    z-index: 10;
+    padding: 15px;
+}
+
+#submit-tab {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 30%;
+    background: #222;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#submit-tab-text {
+    width: 90%;
+}
+
+#submit-tab-button {
+    width: 90%;
+    border: none;
+    background-color: #515151;
+    border-radius: 10px;
+}
+
+
+#success-notification {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.success {
+    color: lightgreen;
+}
+
+.failure {
+    color: crimson;
+}
+
+div.footer {
+    display: grid;
+    margin: auto;
+    position: absolute;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw+1rem, 7rem);
+}
+
+.navigation-button {
+    border: none;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    display: inline-grid;
+    font-size: 16px;
+    border-radius: 3px;    
+
+    background-color: tomato;
+    color: white;
+
+    cursor: pointer;
+}
+
+.navigation-button:hover {
+    background-color: lightpink;
+}

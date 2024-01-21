@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabs</title>
+        <meta name="description" content="Guitar Tabs">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/tabs.css">
+        <script type="text/javascript" src="static/js/tabs.js"></script>
+        <script type="text/javascript">setTabs({{tabs|tojson}});</script>
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1 class="title">Tabs</h1>
+        </div>
+        
+        <div id="navigation-div" class="navigation">
+            <button id="home-button" class="navigation-button" onclick="window.location.href='/';">Home</button>
+            <button id="tabs-button" class="navigation-button" onclick="window.location.href='/tabs';">Tabs</button>
+            <button id="about-button" class="navigation-button" onclick="window.location.href='/about';">About</button>
+        </div>
+
+        <form id="submit-tab" method="post" autocomplete="off">
+            <label for="url">Submit a Tab</label>
+            <br>
+            <input id="submit-tab-text" type="text" name="url"
+                   placeholder="Tab URL"
+                   value="{{ request.form['url'] }}"></input>
+            <br>
+            <button id="submit-tab-button" type="submit">Submit</button>
+        </form>
+        
+        <div id="success-notification">
+            {% if success == True%}
+                <p class="success">Submitted tab.</p>
+            {% elif success == False %}
+                <p class="failure">Invalid link..</p>
+            {% endif %}
+        </div>
+
+        <div id="tabs-div" class="tabs-div"></div>
+        
+        <div class="footer">
+            <p>Created by <a class="creator-link" href="https://github.com/Serpyne"> Serpyne</a></p>
+        </div>
+    </body>
+</html>
+
